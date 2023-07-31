@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import ClientSide from './ClientOnly'
 export default function Home() {
   const array = [

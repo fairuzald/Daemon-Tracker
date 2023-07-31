@@ -1,0 +1,28 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id             String        @id @default(auto()) @map("_id") @db.ObjectId
+  Nama_Lengkap   String
+  ID_line        String
+  Nomor_HP       String?
+  Contact_Status ContactStatus @default(Belum_kontak)
+  Daemon_Status  DaemonStatus  @default(Bukan)
+}
+
+enum ContactStatus {
+  Sudah_kontak
+  Belum_kontak
+  Sudah_wawan
+}
+
+enum DaemonStatus {
+  Bukan
+  Iya
+}
