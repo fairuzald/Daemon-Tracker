@@ -1,5 +1,6 @@
 import ClientSide from './ClientOnly'
 import getContacts from './actions/getContacts';
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const array = await getContacts()
