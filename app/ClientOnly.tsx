@@ -70,13 +70,13 @@ export default function ClientSide({ daemons }: { daemons: Contact[] }) {
         },
         body: JSON.stringify({
           contactId: selectedStatus[index].id,
-          DaemonStatus: event.currentTarget.value,
+          daemonStatus: event.currentTarget.value,
         }),
       });
 
       if (response.ok) {
         // Status updated successfully, you may want to update the UI accordingly
-        toast.success("Contact status updated successfully");
+        toast.success("Daemon status updated successfully");
 
       } else {
         // Handle the error case
