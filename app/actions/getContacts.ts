@@ -5,7 +5,7 @@ export default async function getContacts() {
     // Retrieve Contacts data from database
     const contacts = await prisma.contact.findMany({
       orderBy: {
-        Nama_Lengkap: 'asc' // 'asc' for ascending order, 'desc' for descending order
+        uuid: 'asc' // 'asc' for ascending order, 'desc' for descending order
       },
     });
 

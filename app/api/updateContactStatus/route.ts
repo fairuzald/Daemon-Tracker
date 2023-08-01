@@ -6,7 +6,7 @@ export async function PUT(req: Request) {
     const { contactId, contactStatus } = body;
   
     // Update user data
-    const updatedUser =  
+    const updatedData =  
         // Update the contact_status in the database
         await prisma.contact.update({
           where: { id: contactId },
@@ -15,6 +15,6 @@ export async function PUT(req: Request) {
           },
         });
     
-    return NextResponse.json({ updatedUser });
+    return NextResponse.json({ updatedData });
   }
   

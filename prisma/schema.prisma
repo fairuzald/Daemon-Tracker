@@ -9,6 +9,7 @@ datasource db {
 
 model Contact {
   id             String        @id @default(auto()) @map("_id") @db.ObjectId
+  uuid           Int
   Nama_Lengkap   String
   ID_line        String?       // Make it optional by adding "?"
   Nomor_HP       String?
