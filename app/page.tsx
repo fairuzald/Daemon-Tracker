@@ -3,7 +3,7 @@ import getContacts from './actions/getContacts';
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const array = await getContacts()
+  const data = await getContacts()
   return (
     <div className="
     max-w-[2520px]
@@ -15,7 +15,7 @@ export default async function Home() {
 
     >
       <div className="text-center font-bold text-5xl pt-10 pb-10">FIND THE DAEMONS!</div>
-      <ClientSide daemons={array} />
+      <ClientSide daemons={data} />
 
 
     </div>
