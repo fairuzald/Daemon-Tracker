@@ -1,24 +1,8 @@
 import ClientSide from './ClientOnly'
-export default function Home() {
-  const array = [
-    {
-      id : 1,
-      Nama_Lengkap : "Monica Adelia",
-      ID_line : "monicadelia88",
-      Nomor_HP: "",
-      Contact_Status: "Sudah kontak",
-      Daemon_Status: "Bukan"
-    },
-    {
-        id : 2,
-        Nama_Lengkap : "Monica Adelia",
-        ID_line : "monicadelia88",
-        Nomor_HP: "",
-        Contact_Status: "Belum kontak",
-        Daemon_Status: "Iya"
-    },
+import getContacts from './actions/getContacts';
 
-]
+export default async function Home() {
+  const array = await getContacts()
   return (
     <div className="
     max-w-[2520px]
@@ -27,12 +11,12 @@ export default function Home() {
     md:px-10
     sm:px-2
     px-4 "
-    
+
     >
-    <div className="text-center font-bold text-5xl pt-10 pb-10">FIND THE DAEMONS!</div>
-    <ClientSide daemons={array}/>
-    
-    
-   </div>
+      <div className="text-center font-bold text-5xl pt-10 pb-10">FIND THE DAEMONS!</div>
+      <ClientSide daemons={array} />
+
+
+    </div>
   )
 }
